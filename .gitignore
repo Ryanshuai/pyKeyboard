@@ -1,2 +1,4 @@
-/USB Version/.vscode/
+*.iml
+*.xml
+*.gitignore
 
