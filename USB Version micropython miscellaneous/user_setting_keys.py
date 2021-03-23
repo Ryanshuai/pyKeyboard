@@ -6,17 +6,17 @@ lin_key_right = ["Esc", ["Ctrl", "Shift"], "Fn2", "Fn1", "Space", "Space"]
 left_nml = [["", "", "2", "3", "4", "5"],
             ["1", "q", "w", "e", "r", "t"],
             ["Tab", "a", "s", "d", "f", "g"],
-            ["Caps", "z", "x", "c", "v", "b"],
+            ["Caps_Lock", "z", "x", "c", "v", "b"],
             ["Ctrl", ["(", ")", "Left"], "Shift", ["[", "]", "Left"], "F1", "F5"]]
 left_fn1 = [["", "", "@", "#", "$", "%"],
             ["`", "q", "w", "e", "r", "t"],
             ["Mute", "a", "s", "d", "f", "g"],
-            ["Caps", "z", "x", "c", "v", "b"],
+            ["Caps_Lock", "z", "x", "c", "v", "b"],
             ["Ctrl", ["(", ")", "Left"], "Shift", ["{", "}", "Left"], "F1", "F5"]]
 left_fn2 = [["", "", "F2", "F3", "F4", "F5"],
             ["F1", "q", "w", "e", "r", "t"],
             ["Tab", "a", "s", "d", "f", "g"],
-            ["Caps", "z", "x", "c", "v", "b"],
+            ["Caps_Lock", "z", "x", "c", "v", "b"],
             ["Ctrl", ["(", ")", "Left"], "Shift", ["[", "]", "Left"], "F1", "F5"]]
 
 right_nml = [["6", "7", "8", "9", "", ""],
