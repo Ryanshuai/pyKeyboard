@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 lin_key = ["Fn2", "Shift", "Win", "Alt", "Ctrl", "Fn1"]
 
 left_nml = [["", "", "2", "3", "4", "5"],

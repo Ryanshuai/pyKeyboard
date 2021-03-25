@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import pyb
 
 from user_setting_keys import left_to_mat_key_names, right_to_mat_key_names, lin_key

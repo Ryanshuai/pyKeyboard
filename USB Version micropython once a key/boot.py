@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-
 import machine
 import pyb
-
 
 col1 = pyb.Pin('A10', pyb.Pin.IN, pyb.Pin.PULL_UP)
 pyb.delay(1000)

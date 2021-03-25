@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import pyb
 kb = pyb.USB_HID()
 
