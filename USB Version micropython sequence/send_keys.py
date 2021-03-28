@@ -8,65 +8,38 @@ hid = pyb.USB_HID()
 class Sender:
     def __init__(self):
         self.byte0 = 0
-        self.normal_buff = set()
-        self.shift_buff = set()
+        self.buff = set()
         self.sequence_buff = list()
 
     def decode_keys(self, keys):
-        self.is_shift = False
         self.byte0 = 0
-        self.normal_buff = set()
-        self.shift_buff = set()
+        self.buff = set()
         self.sequence_buff = list()
 
         keys = set(keys)
-        if "Ctrl" in keys:
-            self.byte0 |= 1
-        if "Alt" in keys:
-            self.byte0 |= 4
-        if "Win" in keys:
-            self.byte0 |= 8
-
-        if "Shift" in keys:
-            self.byte0 |= 2
-            for key in keys:
-                if isinstance(key, tuple):
-                    continue
-
-                hex, b0 = key_to_hex.get(key, [0, 0])
-                self.shift_buff.add(hex)
-            self.shift_buff.discard(0)
-            return
-
         for key in keys:
             if isinstance(key, tuple):
                 self.sequence_buff = [key_to_hex.get(k, [0, 0]) for k in key]
-
+                break
             hex, b0 = key_to_hex.get(key, [0, 0])
-            if b0 == 2:
-                self.shift_buff.add(hex)
-            else:
-                self.normal_buff.add(hex)
-            self.normal_buff.discard(0)
-            self.shift_buff.discard(0)
+            self.byte0 |= b0
+            self.buff.add(hex)
+        self.buff.discard(0)
 
     def send_buffers(self):
         if self.sequence_buff:
             for hex, byte0 in self.sequence_buff:
-                press_keys(byte0, [hex])
-                self.release_keys()
-            self.release_keys(100)
-            return
-
-        if self.shift_buff:
-            press_keys(self.byte0 | 2, self.shift_buff)
+                press_keys(byte0 | self.byte0, [hex])
+                release_keys()
+            release_keys(100)
         else:
-            press_keys(self.byte0, self.normal_buff)
+            press_keys(self.byte0, self.buff)
 
-    def release_keys(self, time=None):
-        time = time if time else 10
-        hid.send(bytearray(8))
-        pyb.delay(time)
+
+def release_keys(time=None):
+    time = time if time else 10
+    hid.send(bytearray(8))
+    pyb.delay(time)
 
 
 def press_keys(byte0, key_hex_codes):
@@ -86,6 +59,11 @@ def press_keys(byte0, key_hex_codes):
 
 
 key_to_hex = {
+    "Ctrl": [0, 1],
+    "Shift": [0, 2],
+    "Alt": [0, 4],
+    "Win": [0, 8],
+
     "a": [0x04, 0],
     "b": [0x05, 0],
     "c": [0x06, 0],

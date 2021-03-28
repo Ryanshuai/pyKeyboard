@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 lin_key_left = ["Esc", "Alt", "Fn2", "Fn1", "Win", "Space"]
-lin_key_right = ["Esc", ["Ctrl", "Shift"], "Fn2", "Fn1", "Space", "Space"]
+lin_key_right = ["Esc", ("Ctrl", "Shift"), "Fn2", "Fn1", "Space", "Space"]
 
 left_nml = [["", "", "2", "3", "4", "5"],
             ["1", "q", "w", "e", "r", "t"],
@@ -32,7 +32,7 @@ right_fn1 = [["^", "F7", "F8", "F9", "", ""],
 right_fn2 = [["F6", "F7", "F8", "F9", "", ""],
              ["y", "u", "i", "o", "p", "Backspace"],
              ["h", "j", "k", "l", ";", "Enter"],
-             ["n", "m", ",", ".", "?", (""",""", "Left"), ],
+             ["n", "m", ",", ".", "?", ('"', '"', "Left"), ],
              ["0", "&", "*", "|", "Ins", ("Ctrl", "Alt")]]
 
 left_to_mat_key_names = [left_nml, left_fn1, left_fn2]
