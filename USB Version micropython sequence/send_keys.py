@@ -13,6 +13,12 @@ class Sender:
         self.sequence_buff = list()
 
     def decode_keys(self, keys):
+        self.is_shift = False
+        self.byte0 = 0
+        self.normal_buff = set()
+        self.shift_buff = set()
+        self.sequence_buff = list()
+
         keys = set(keys)
         if "Ctrl" in keys:
             self.byte0 |= 1
@@ -24,8 +30,8 @@ class Sender:
         if "Shift" in keys:
             self.byte0 |= 2
             for key in keys:
-                if isinstance(key, list):
-                    self.sequence_buff = [key_to_hex.get(k, [0, 0]) for k in key]
+                if isinstance(key, tuple):
+                    continue
 
                 hex, b0 = key_to_hex.get(key, [0, 0])
                 self.shift_buff.add(hex)
@@ -33,7 +39,7 @@ class Sender:
             return
 
         for key in keys:
-            if isinstance(key, list):
+            if isinstance(key, tuple):
                 self.sequence_buff = [key_to_hex.get(k, [0, 0]) for k in key]
 
             hex, b0 = key_to_hex.get(key, [0, 0])
@@ -45,22 +51,22 @@ class Sender:
             self.shift_buff.discard(0)
 
     def send_buffers(self):
-        if self.normal_buff:
-            self.byte0 &= 1 + 4 + 8
-            press_keys(self.byte0, self.normal_buff)
-            self.release_keys()
-        if self.shift_buff:
-            self.byte0 |= 2
-            press_keys(self.byte0, self.shift_buff)
-            self.release_keys()
         if self.sequence_buff:
             for hex, byte0 in self.sequence_buff:
                 press_keys(byte0, [hex])
                 self.release_keys()
+            self.release_keys(100)
+            return
 
-    def release_keys(self):
+        if self.shift_buff:
+            press_keys(self.byte0 | 2, self.shift_buff)
+        else:
+            press_keys(self.byte0, self.normal_buff)
+
+    def release_keys(self, time=None):
+        time = time if time else 10
         hid.send(bytearray(8))
-        pyb.delay(10)
+        pyb.delay(time)
 
 
 def press_keys(byte0, key_hex_codes):
