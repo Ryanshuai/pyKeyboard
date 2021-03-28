@@ -10,10 +10,10 @@ sender = Sender()
 report_count = 10000 * 100
 anyKeyPushed = 0
 
-# lin_key = lin_key_left
-# to_mat_keys = left_to_mat_key_names
-lin_key = lin_key_right
-to_mat_keys = right_to_mat_key_names
+lin_key = lin_key_left
+to_mat_keys = left_to_mat_key_names
+# lin_key = lin_key_right
+# to_mat_keys = right_to_mat_key_names
 lin_io = LinearIO(["B13", "B14", "B15", "A8", "A9", "A10"])
 mat_io = MatrixIO(["A0", "A1", "A2", "A3", "A4"], ["B3", "B4", "B5", "B6", "B7", "B8"])
 

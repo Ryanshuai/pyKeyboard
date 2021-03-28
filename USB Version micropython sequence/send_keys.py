@@ -11,19 +11,24 @@ class Sender:
         self.buff = set()
         self.sequence_buff = list()
 
+    def add_to_buff(self, hex, byte0):
+        self.byte0 |= byte0
+        self.buff.add(hex)
+
     def decode_keys(self, keys):
         self.byte0 = 0
         self.buff = set()
         self.sequence_buff = list()
 
-        keys = set(keys)
         for key in keys:
-            if isinstance(key, tuple):
-                self.sequence_buff = [key_to_hex.get(k, [0, 0]) for k in key]
+            if isinstance(key, list):
+                self.sequence_buff = [key_to_hex[k] for k in key]
                 break
-            hex, b0 = key_to_hex.get(key, [0, 0])
-            self.byte0 |= b0
-            self.buff.add(hex)
+            if isinstance(key, tuple):
+                for k in key:
+                    self.add_to_buff(*key_to_hex[k])
+            else:
+                self.add_to_buff(*key_to_hex[key])
         self.buff.discard(0)
 
     def send_buffers(self):
@@ -59,6 +64,10 @@ def press_keys(byte0, key_hex_codes):
 
 
 key_to_hex = {
+    "Fn1": [0, 0],
+    "Fn2": [0, 0],
+    "Fn3": [0, 0],
+
     "Ctrl": [0, 1],
     "Shift": [0, 2],
     "Alt": [0, 4],
