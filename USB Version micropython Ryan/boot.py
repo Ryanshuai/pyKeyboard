@@ -12,4 +12,4 @@ if col1.value():  # not pushed
     pyb.main('main.py')
 else:
     pyb.usb_mode('VCP+MSC')
-    pyb.main('send_keys.py')
+    pyb.main('keyboard_send.py')
