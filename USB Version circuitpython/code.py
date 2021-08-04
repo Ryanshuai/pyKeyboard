@@ -1,9 +1,8 @@
 import time
 import board
 
-from keyboard_send import press_keys, release_keys, send_keys
+from keyboard_send import press_keys, release_keys, send_keys, release_all_keys
 from pyboard_io import LinearIO, MatrixIO
-from keyboard_send import kbd, layout
 
 from configs import left_to_mat_key_names, right_to_mat_key_names, lin_key
 
@@ -37,4 +36,4 @@ while True:
         state_keys_previous = state_keys
         mat_keys_previous = mat_keys
 
-        time.sleep(0.001)
+    time.sleep(0.001)

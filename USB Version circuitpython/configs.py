@@ -10,13 +10,13 @@ left_nml = [[0, 0, Keycode.TWO, Keycode.THREE, Keycode.FOUR, Keycode.FIVE],
             [Keycode.ESCAPE, Keycode.Z, Keycode.BACKSPACE, Keycode.SPACE, Keycode.ENTER, Keycode.TAB]]
 left_fn1 = [["", "", Keycode.F3, Keycode.F4, Keycode.F5, Keycode.F6],
             [Keycode.F1, Keycode.F2, "w", "<", ">", "'"],
-            ["+", "q", "s", "(", ")", '"'],
-            ["-", "a", "x", "[", "]", ":"],
+            [Keycode.KEYPAD_PLUS, "q", "s", "(", ")", '"'],
+            [Keycode.KEYPAD_MINUS, "a", "x", "[", "]", ":"],
             [Keycode.ESCAPE, "z", Keycode.BACKSPACE, "{", "}", ";"]]
 left_fn2 = [["", "", Keycode.F3, Keycode.F4, Keycode.F5, Keycode.F6],
             [Keycode.F1, Keycode.F2, "w", "e", "r", "t"],
-            ["+", "q", "s", "d", "f", "g"],
-            ["-", "a", "x", "c", "v", "b"],
+            [Keycode.KEYPAD_PLUS, "q", "s", "d", "f", "g"],
+            [Keycode.KEYPAD_MINUS, "a", "x", "c", "v", "b"],
             [Keycode.ESCAPE, "z", Keycode.BACKSPACE, Keycode.SPACE, Keycode.ENTER, Keycode.TAB]]
 
 right_nml = [[Keycode.SIX, Keycode.SEVEN, Keycode.EIGHT, Keycode.NINE, "", ""],
