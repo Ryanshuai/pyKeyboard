@@ -23,19 +23,25 @@ def send_keys(keys):
 
 
 def press_keys(keys):
-    for key in keys:
-        if isinstance(key, tuple):
-            kbd.press(*key)
-        else:
-            kbd.press(key)
+    if isinstance(keys, int):
+        kbd.press(keys)
+    elif isinstance(keys, str):
+        keys = layout.keycodes(keys)
+        press_keys(keys)
+    else:
+        for key in keys:
+            press_keys(key)
 
 
 def release_keys(keys):
-    for key in keys:
-        if isinstance(key, tuple):
-            kbd.release(*key)
-        else:
-            kbd.release(key)
+    if isinstance(keys, int):
+        kbd.release(keys)
+    elif isinstance(keys, str):
+        keys = layout.keycodes(keys)
+        release_keys(keys)
+    else:
+        for key in keys:
+            release_keys(key)
 
 
 def release_all_keys():
