@@ -14,6 +14,8 @@ mat_io = MatrixIO([board.GP1, board.GP2, board.GP3, board.GP4, board.GP5],
 state_keys_previous = set()
 mat_keys_previous = set()
 
+time.sleep(3)
+
 while True:
     lin_pushed = lin_io.update()
     mat_pushed = mat_io.update()
