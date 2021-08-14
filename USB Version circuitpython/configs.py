@@ -19,17 +19,17 @@ left_fn2 = [["", "", Keycode.F3, Keycode.F4, Keycode.F5, Keycode.F6],
             [Keycode.KEYPAD_MINUS, "a", "x", "c", "v", "b"],
             [Keycode.ESCAPE, "z", Keycode.BACKSPACE, Keycode.SPACE, Keycode.ENTER, Keycode.TAB]]
 
-right_nml = [[Keycode.SIX, Keycode.SEVEN, Keycode.EIGHT, Keycode.NINE, "", ""],
+right_nml = [[Keycode.SIX, Keycode.SEVEN, Keycode.EIGHT, Keycode.NINE, 0, 0],
              ["y", "u", "i", "o", Keycode.ZERO, Keycode.DELETE],
              ["h", "j", "k", "l", "p", Keycode.BACKSLASH],
              ["n", "m", Keycode.UP_ARROW, ".", ",", "_", ],
              ["=", Keycode.LEFT_ARROW, Keycode.DOWN_ARROW, Keycode.RIGHT_ARROW, "*", Keycode.FORWARD_SLASH]]
-right_fn1 = [[Keycode.F7, Keycode.F8, Keycode.F9, Keycode.F10, "", ""],
+right_fn1 = [[Keycode.F7, Keycode.F8, Keycode.F9, Keycode.F10, 0, 0],
              ["'", "<", ">", "o", Keycode.F11, Keycode.F12],
              ['"', "(", ")", "l", "p", "\\"],
              [":", "[", Keycode.PAGE_UP, ".", ",", "_", ],
-             [";", Keycode.HOME, Keycode.PAGE_DOWN, Keycode.END, "*", "/"]]
-right_fn2 = [[Keycode.F7, Keycode.F8, Keycode.F9, Keycode.F10, "", ""],
+             [";", Keycode.HOME, Keycode.PAGE_DOWN, Keycode.END, "*", "?"]]
+right_fn2 = [[Keycode.F7, Keycode.F8, Keycode.F9, Keycode.F10, 0, 0],
              ["y", "u", "i", "o", Keycode.F11, Keycode.F12],
              ["h", "j", "k", "l", "p", "\\"],
              ["n", "m", Keycode.UP_ARROW, ".", ",", "_", ],

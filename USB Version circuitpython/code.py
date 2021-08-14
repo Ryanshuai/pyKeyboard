@@ -6,15 +6,13 @@ from pyboard_io import LinearIO, MatrixIO
 
 from configs import left_to_mat_key_names, right_to_mat_key_names, lin_key
 
-to_mat_keys = left_to_mat_key_names
+to_mat_keys = right_to_mat_key_names
 lin_io = LinearIO([board.GP12, board.GP13, board.GP14, board.GP15, board.GP16, board.GP17])
 mat_io = MatrixIO([board.GP1, board.GP2, board.GP3, board.GP4, board.GP5],
                   [board.GP6, board.GP7, board.GP8, board.GP9, board.GP10, board.GP11])
 
 state_keys_previous = set()
 mat_keys_previous = set()
-
-time.sleep(3)
 
 while True:
     lin_pushed = lin_io.update()
