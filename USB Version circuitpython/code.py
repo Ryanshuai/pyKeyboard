@@ -24,16 +24,16 @@ while True:
         state_keys.discard("Fn2")
         mat_keys = {to_mat_keys[fn_num][pos[0]][pos[1]] for pos in mat_pushed}
 
-        print("-----------------------")
-        print(state_keys, state_keys_previous)
+        # print("-----------------------")
+        # print(state_keys, state_keys_previous)
         press_keys(state_keys - state_keys_previous)
         release_keys(state_keys_previous - state_keys)
 
-        print(mat_keys, mat_keys_previous)
+        # print(mat_keys, mat_keys_previous)
         press_keys(mat_keys - mat_keys_previous)
         release_keys(mat_keys_previous - mat_keys)
 
         state_keys_previous = state_keys
         mat_keys_previous = mat_keys
 
-    time.sleep(0.001)
+    time.sleep(0.005)
