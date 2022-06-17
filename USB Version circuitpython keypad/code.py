@@ -3,9 +3,9 @@ import board
 import keypad
 
 from keyboard_send import press_keys, release_keys, send_keys, release_all_keys
-from configs import left_to_mat_key_names, right_to_mat_key_names, lin_key
+from configs import left_mat_pos_to_key, right_mat_pos_to_key, lin_key
 
-to_mat_keys = left_to_mat_key_names
+mat_pos_to_key = left_mat_pos_to_key
 
 KEY_PINS = (board.GP12, board.GP13, board.GP14, board.GP15, board.GP16, board.GP17)
 
@@ -33,7 +33,7 @@ while True:
     mat_event = mat_keys.events.get()
     if mat_event:
         if mat_event.pressed:
-            press_keys(left_to_mat_key_names[fn1][mat_event.key_number])
+            press_keys(mat_pos_to_key[fn1][mat_event.key_number])
 
         if mat_event.released:
-            release_keys(left_to_mat_key_names[fn1][mat_event.key_number])
+            release_keys(mat_pos_to_key[fn1][mat_event.key_number])

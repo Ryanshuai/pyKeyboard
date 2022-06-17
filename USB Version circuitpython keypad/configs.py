@@ -1,6 +1,5 @@
 from adafruit_hid.keycode import Keycode
 
-# lin_key = ["Fn2", Keycode.SHIFT, Keycode.WINDOWS, Keycode.ALT, Keycode.CONTROL, "Fn1"]
 lin_key = ["Fn1", Keycode.CONTROL, Keycode.ALT, Keycode.WINDOWS, Keycode.SHIFT, "Fn2"]
 
 left_nml = [0, 0, Keycode.TWO, Keycode.THREE, Keycode.FOUR, Keycode.FIVE,
@@ -35,5 +34,5 @@ right_fn2 = [Keycode.F7, Keycode.F8, Keycode.F9, Keycode.F10, 0, 0,
              "n", "m", Keycode.UP_ARROW, ".", ",", "_",
              "=", Keycode.LEFT_ARROW, Keycode.DOWN_ARROW, Keycode.RIGHT_ARROW, "*", Keycode.FORWARD_SLASH]
 
-left_to_mat_key_names = [left_nml, left_fn1, left_fn2]
-right_to_mat_key_names = [right_nml, right_fn1, right_fn2]
+left_mat_pos_to_key = [left_nml, left_fn1, left_fn2]
+right_mat_pos_to_key = [right_nml, right_fn1, right_fn2]
