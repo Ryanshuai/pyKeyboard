@@ -20,17 +20,17 @@ while True:
     linear_event = linear_keys.events.get()
     if linear_event:
         if linear_event.pressed:
-            if linear_event.key_number == 0:
+            if linear_event.key_number == 0 or linear_event.key_number == 6:
                 fn1 = 1
             else:
                 press_keys(lin_key[linear_event.key_number])
         if linear_event.released:
-            if linear_event.key_number == 0:
+            if linear_event.key_number == 0 or linear_event.key_number == 6:
                 fn1 = 0
             else:
                 release_keys(lin_key[linear_event.key_number])
+            release_all_keys()
 
-    mat_event = mat_keys.events.get()
     if mat_event:
         if mat_event.pressed:
             press_keys(mat_pos_to_key[fn1][mat_event.key_number])
