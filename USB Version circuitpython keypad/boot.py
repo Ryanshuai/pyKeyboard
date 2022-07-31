@@ -1,7 +1,8 @@
-
-
+import usb_hid
 import storage, usb_cdc
 import board, digitalio
+
+usb_hid.enable((usb_hid.Device.KEYBOARD, ), boot_device=1)  # 1 for a keyboard
 
 # In this example, the button is wired to connect D2 to +V when pushed.
 button = digitalio.DigitalInOut(board.GP12)

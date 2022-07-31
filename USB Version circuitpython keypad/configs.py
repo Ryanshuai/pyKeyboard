@@ -14,8 +14,8 @@ left_fn1 = ["", "", Keycode.F3, Keycode.F4, Keycode.F5, Keycode.F6,
             Keycode.ESCAPE, "z", Keycode.BACKSPACE, "{", "}", ";"]
 left_fn2 = ["", "", Keycode.F3, Keycode.F4, Keycode.F5, Keycode.F6,
             Keycode.F1, Keycode.F2, "w", "e", "r", "t",
-            Keycode.KEYPAD_PLUS, "q", "s", "d", "f", "g",
-            Keycode.KEYPAD_MINUS, "a", "x", "c", "v", "b",
+            Keycode.KEYPAD_PLUS, "q", (Keycode.CONTROL ,Keycode.F2), (Keycode.SHIFT ,Keycode.F9),  (Keycode.SHIFT ,Keycode.F10), "g",
+            Keycode.KEYPAD_MINUS, "a", Keycode.F9,(Keycode.ALT ,Keycode.F8), Keycode.F8, (Keycode.CONTROL ,Keycode.F8),
             Keycode.ESCAPE, "z", Keycode.BACKSPACE, Keycode.SPACE, Keycode.ENTER, Keycode.TAB]
 
 right_nml = [Keycode.SIX, Keycode.SEVEN, Keycode.EIGHT, Keycode.NINE, 0, 0,

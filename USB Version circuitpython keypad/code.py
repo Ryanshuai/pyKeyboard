@@ -15,25 +15,29 @@ mat_keys = keypad.KeyMatrix(
     column_pins=(board.GP6, board.GP7, board.GP8, board.GP9, board.GP10, board.GP11),
 )
 
-fn1 = 0
+fn = 0
 while True:
     linear_event = linear_keys.events.get()
+    mat_event = mat_keys.events.get()
+
     if linear_event:
         if linear_event.pressed:
-            if linear_event.key_number == 0 or linear_event.key_number == 6:
-                fn1 = 1
+            if linear_event.key_number == 0:
+                fn = 1
+            elif linear_event.key_number == 5:
+                fn = 2
             else:
                 press_keys(lin_key[linear_event.key_number])
         if linear_event.released:
-            if linear_event.key_number == 0 or linear_event.key_number == 6:
-                fn1 = 0
+            if linear_event.key_number == 0 or linear_event.key_number == 5:
+                fn = 0
             else:
                 release_keys(lin_key[linear_event.key_number])
             release_all_keys()
 
     if mat_event:
         if mat_event.pressed:
-            press_keys(mat_pos_to_key[fn1][mat_event.key_number])
+            press_keys(mat_pos_to_key[fn][mat_event.key_number])
 
         if mat_event.released:
-            release_keys(mat_pos_to_key[fn1][mat_event.key_number])
+            release_keys(mat_pos_to_key[fn][mat_event.key_number])
