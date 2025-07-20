@@ -1,39 +1,45 @@
 import time
 import board
+import keypad
+import microcontroller
 
 from keyboard_send import press_keys, release_keys, send_keys, release_all_keys
-from pyboard_io import LinearIO, MatrixIO
+from configs import left_mat_pos_to_key, right_mat_pos_to_key, lin_key
 
-from configs import left_to_mat_key_names, right_to_mat_key_names, lin_key
+mat_pos_to_key = right_mat_pos_to_key
 
-to_mat_keys = right_to_mat_key_names
-lin_io = LinearIO([board.GP12, board.GP13, board.GP14, board.GP15, board.GP16, board.GP17])
-mat_io = MatrixIO([board.GP1, board.GP2, board.GP3, board.GP4, board.GP5],
-                  [board.GP6, board.GP7, board.GP8, board.GP9, board.GP10, board.GP11])
+time.sleep(1)
+KEY_PINS = (board.GP12, board.GP13, board.GP14, board.GP15, board.GP16, board.GP17)
+linear_keys = keypad.Keys(KEY_PINS, value_when_pressed=False, pull=True)
+mat_keys = keypad.KeyMatrix(
+    row_pins=(board.GP1, board.GP2, board.GP3, board.GP4, board.GP5),
+    column_pins=(board.GP6, board.GP7, board.GP8, board.GP9, board.GP10, board.GP11),
+)
 
-state_keys_previous = set()
-mat_keys_previous = set()
-
+fn = 0
 while True:
-    lin_pushed = lin_io.update()
-    mat_pushed = mat_io.update()
-    if len(lin_pushed) + len(mat_pushed) + len(state_keys_previous) + len(mat_keys_previous):
-        state_keys = {lin_key[pos] for pos in lin_pushed}
-        fn_num = ("Fn1" in state_keys)  # + 2 * ("fn2" in state_keys)
-        state_keys.discard("Fn1")
-        state_keys.discard("Fn2")
-        mat_keys = {to_mat_keys[fn_num][pos[0]][pos[1]] for pos in mat_pushed}
+    linear_event = linear_keys.events.get()
+    mat_event = mat_keys.events.get()
 
-        # print("-----------------------")
-        # print(state_keys, state_keys_previous)
-        press_keys(state_keys - state_keys_previous)
-        release_keys(state_keys_previous - state_keys)
+    if linear_event:
+        if linear_event.pressed:
+            if linear_event.key_number == 0:
+                fn = 1
+            elif linear_event.key_number == 5:
+                fn = 2
+            else:
+                press_keys(lin_key[linear_event.key_number])
+        if linear_event.released:
+            if linear_event.key_number == 0 or linear_event.key_number == 5:
+                fn = 0
+                release_all_keys()
+            else:
+                release_keys(lin_key[linear_event.key_number])
 
-        # print(mat_keys, mat_keys_previous)
-        press_keys(mat_keys - mat_keys_previous)
-        release_keys(mat_keys_previous - mat_keys)
+    if mat_event:
+        if mat_event.pressed:
+            press_keys(mat_pos_to_key[fn][mat_event.key_number])
 
-        state_keys_previous = state_keys
-        mat_keys_previous = mat_keys
+        if mat_event.released:
+            release_keys(mat_pos_to_key[fn][mat_event.key_number])
 
-    time.sleep(0.005)
