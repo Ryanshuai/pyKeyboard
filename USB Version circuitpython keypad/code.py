@@ -4,6 +4,7 @@ import keypad
 
 from keyboard_send import press_keys, release_keys, release_all_keys
 from configs import left_mat_pos_to_key, right_mat_pos_to_key, lin_key
+from adafruit_hid.keycode import Keycode
 
 mat_pos_to_key = left_mat_pos_to_key
 
@@ -18,28 +19,41 @@ mat_keys = keypad.KeyMatrix(
 release_all_keys()
 
 fn = 0
+shift_state = False
 while True:
     linear_event = linear_keys.events.get()
     mat_event = mat_keys.events.get()
 
+    # 行键区事件
     if linear_event:
+        key = lin_key[linear_event.key_number]
         if linear_event.pressed:
-            if linear_event.key_number == 0:
+            # Fn1 切换层
+            if key == "Fn1":
                 fn = 1
-            # elif linear_event.key_number == 5:
-            #     fn = 2
+            # Shift 手动按下
+            elif key == Keycode.SHIFT:
+                shift_state = True
+                press_keys(Keycode.SHIFT)
             else:
-                press_keys(lin_key[linear_event.key_number])
+                press_keys(key)
         if linear_event.released:
-            if linear_event.key_number == 0:  # or linear_event.key_number == 5:
+            if key == "Fn1":
                 fn = 0
                 release_all_keys()
+            elif key == Keycode.SHIFT:
+                shift_state = False
+                release_keys(Keycode.SHIFT)
             else:
-                release_keys(lin_key[linear_event.key_number])
+                release_keys(key)
 
+    # 矩阵区事件
     if mat_event:
+        mapping = mat_pos_to_key[fn][mat_event.key_number]
+        # 如果已手动按下 Shift，剔除映射中的 Shift
+        if shift_state and isinstance(mapping, tuple):
+            mapping = tuple(k for k in mapping if k is not Keycode.SHIFT)
         if mat_event.pressed:
-            press_keys(mat_pos_to_key[fn][mat_event.key_number])
-
+            press_keys(mapping)
         if mat_event.released:
-            release_keys(mat_pos_to_key[fn][mat_event.key_number])
+            release_keys(mapping)
