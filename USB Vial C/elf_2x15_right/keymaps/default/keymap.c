@@ -3,6 +3,32 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
      * Layer 0: Normal (右手)
+     * 
+     * 物理布局:
+     * ┌────┬────┬────┬────┬────┬────┐
+     * │ 6  │ 7  │ 8  │ 9  │    │    │
+     * ├────┼────┼────┼────┼────┼────┤
+     * │ Y  │ U  │ I  │ O  │ 0  │DEL │
+     * ├────┼────┼────┼────┼────┼────┤
+     * │ H  │ J  │ K  │ L  │ P  │ \  │
+     * ├────┼────┼────┼────┼────┼────┤
+     * │ N  │ M  │ ↑  │ .  │ ,  │ _  │
+     * ├────┼────┼────┼────┼────┼────┤
+     * │ =  │ ←  │ ↓  │ →  │ *  │ /  │
+     * └────┴────┴────┴────┴────┴────┘
+     * 
+     * 拇指区实际布局 (2x3):      GPIO对应:
+     *   外列    内列              外列    内列
+     * ┌─────┬─────┐            ┌─────┬─────┐
+     * │LGui │LAlt │            │GP20 │GP21 │
+     * ├─────┼─────┤            ├─────┼─────┤
+     * │LShft│LCtrl│            │GP19 │GP22 │
+     * ├─────┼─────┤            ├─────┼─────┤
+     * │C+F8 │MO(1)│            │GP18 │GP26 │
+     * └─────┴─────┘            └─────┴─────┘
+     * 
+     * Keymap拇指行顺序: GP18, GP19, GP20, GP21, GP22, GP26
+     *                   C+F8, LShft, LGui, LAlt, LCtrl, MO(1)
      */
     [0] = LAYOUT(
         KC_6,    KC_7,    KC_8,    KC_9,    KC_NO,   KC_NO,
@@ -10,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_H,    KC_J,    KC_K,    KC_L,    KC_P,    KC_BSLS,
         KC_N,    KC_M,    KC_UP,   KC_DOT,  KC_COMM, S(KC_MINS),
         KC_EQL,  KC_LEFT, KC_DOWN, KC_RGHT, KC_PAST, KC_SLSH,
-        MO(1),   KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, C(KC_F8)
+        C(KC_F8), KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, MO(1)
     ),
 
     /*

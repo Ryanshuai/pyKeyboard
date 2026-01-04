@@ -1,5 +1,5 @@
 {
-    "keyboard_name": "Elf Right",
+    "keyboard_name": "Elf Left",
     "manufacturer": "Shuai",
     "maintainer": "Shuai",
     "processor": "RP2040",
@@ -7,7 +7,7 @@
     "url": "",
     "usb": {
         "vid": "0x454C",
-        "pid": "0x0001",
+        "pid": "0x0002",
         "device_version": "1.0.0"
     },
     "build": {
