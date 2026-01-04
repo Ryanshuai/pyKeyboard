@@ -2,6 +2,7 @@
     "name": "Elf Right",
     "vendorId": "0x454C",
     "productId": "0x0001",
+    "lighting": "none",
     "matrix": {"rows": 3, "cols": 15},
     "layouts": {
         "keymap": [

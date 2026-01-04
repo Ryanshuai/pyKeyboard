@@ -1,14 +1,16 @@
 #pragma once
 
-// Vial 唯一标识符
-#define VIAL_KEYBOARD_UID {0xE1, 0xF0, 0x21, 0x52, 0x49, 0x47, 0x48, 0x54}
+// debug mode
+//#define VIAL_INSECURE
 
-// 解锁组合键：同时按第一行中间两个键（8 和 9）
-// vial.json keymap 第1行: ["0,0", "0,1", "0,2", "1,0", "1,1", "1,2"]
-// 对应按键:               6      7      8      9     (空)   (空)
-// 所以 8 = [0,2], 9 = [1,0]
+// Vial 唯一标识符 (8 字节)
+#define VIAL_KEYBOARD_UID {0xE1, 0xF0, 0x21, 0x52, 0x49, 0x47, 0x48, 0x31}
+
+// 解锁组合键：同时按第二行的第3、4个键
+// vial.json keymap 第2行: ["0,3", "0,4", "0,5", "1,3", "1,4", "1,5"]
+// 对应矩阵位置 [0,5] 和 [1,3]
 #define VIAL_UNLOCK_COMBO_ROWS {0, 1}
-#define VIAL_UNLOCK_COMBO_COLS {2, 0}
+#define VIAL_UNLOCK_COMBO_COLS {5, 3}
 
 // 动态层数
 #define DYNAMIC_KEYMAP_LAYER_COUNT 4
