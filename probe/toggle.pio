@@ -1,0 +1,8 @@
+; toggle_fast: 在一个 set pin 上无限高速翻转方波
+; 两条指令一循环, 125 MHz / 2 = ~62.5 MHz 方波, 每半周期 8 ns
+
+.program toggle_fast
+.wrap_target
+    set pins, 1
+    set pins, 0
+.wrap

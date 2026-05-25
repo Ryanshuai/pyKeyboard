@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>右手键盘焊接接线图 (背面视角)</title>
+<style>
+  body {
+    background: #1a1a2e;
+    color: #eee;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  h1 { color: #e94560; margin-bottom: 5px; }
+</style>
+</head>
+<body>
+
+<h1>右手键盘焊接图 (背面视角)</h1>
+
+<svg width="1350" height="1050" viewBox="0 0 900 700">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <g id="sw">
+      <rect x="-24" y="-24" width="48" height="48" rx="5" fill="#2d2d44" stroke="#555" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="2.5" fill="#666"/>
+    </g>
+  </defs>
+
+  <!-- PICO (右上, 镜像左手) -->
+  <g transform="translate(755, 20)">
+    <rect x="0" y="0" width="110" height="520" rx="8" fill="#1e3a2f" stroke="#4ecca3" stroke-width="2"/>
+    <rect x="25" y="-12" width="60" height="20" rx="4" fill="#555" stroke="#888" stroke-width="1.5"/>
+    <text x="55" y="2" text-anchor="middle" fill="#ccc" font-size="8">USB</text>
+    <text x="55" y="25" text-anchor="middle" fill="#4ecca3" font-size="10" font-weight="bold">Pico</text>
+
+    <!-- Left pins -->
+    <circle cx="12" cy="50" r="5" fill="#444" stroke="#888"/>
+    <text x="22" y="54" fill="#888" font-size="8">GP0</text>
+    <circle cx="12" cy="72" r="5" fill="#444" stroke="#888"/>
+    <text x="22" y="76" fill="#888" font-size="8">GP1</text>
+    <circle cx="12" cy="94" r="5" fill="#222" stroke="#444"/>
+    <text x="22" y="98" fill="#555" font-size="8">GND</text>
+
+    <circle cx="12" cy="116" r="5" fill="#FF0000" stroke="#FF0000"/>
+    <text x="22" y="120" fill="#FF4444" font-size="8" font-weight="bold">GP2</text>
+    <circle cx="12" cy="138" r="5" fill="#9933FF" stroke="#9933FF"/>
+    <text x="22" y="142" fill="#AA55FF" font-size="8" font-weight="bold">GP3</text>
+    <circle cx="12" cy="160" r="5" fill="#FFD700" stroke="#FFD700"/>
+    <text x="22" y="164" fill="#FFD700" font-size="8" font-weight="bold">GP4</text>
+    <circle cx="12" cy="182" r="5" fill="#FF8C00" stroke="#FF8C00"/>
+    <text x="22" y="186" fill="#FFA500" font-size="8" font-weight="bold">GP5</text>
+    <circle cx="12" cy="204" r="5" fill="#222" stroke="#444"/>
+    <text x="22" y="208" fill="#555" font-size="8">GND</text>
+    <circle cx="12" cy="226" r="5" fill="#8B4513" stroke="#8B4513"/>
+    <text x="22" y="230" fill="#CD853F" font-size="8" font-weight="bold">GP6</text>
+    <circle cx="12" cy="248" r="5" fill="#00CC00" stroke="#00CC00"/>
+    <text x="22" y="252" fill="#00CC00" font-size="8" font-weight="bold">GP7</text>
+    <circle cx="12" cy="270" r="5" fill="#9933FF" stroke="#9933FF"/>
+    <text x="22" y="274" fill="#AA55FF" font-size="8" font-weight="bold">GP8</text>
+
+    <circle cx="12" cy="292" r="5" fill="#FFD700" stroke="#FFD700"/>
+    <text x="22" y="296" fill="#FFD700" font-size="8" font-weight="bold">GP9</text>
+    <circle cx="12" cy="314" r="5" fill="#222" stroke="#444"/>
+    <text x="22" y="318" fill="#555" font-size="8">GND</text>
+    <circle cx="12" cy="336" r="5" fill="#FF8C00" stroke="#FF8C00"/>
+    <text x="22" y="340" fill="#FFA500" font-size="8" font-weight="bold">GP10</text>
+    <circle cx="12" cy="358" r="5" fill="#8B4513" stroke="#8B4513"/>
+    <text x="22" y="362" fill="#CD853F" font-size="8" font-weight="bold">GP11</text>
+    <circle cx="12" cy="380" r="5" fill="#0088FF" stroke="#0088FF"/>
+    <text x="22" y="384" fill="#0088FF" font-size="8" font-weight="bold">GP12</text>
+    <circle cx="12" cy="402" r="5" fill="#9933FF" stroke="#9933FF"/>
+    <text x="22" y="406" fill="#AA55FF" font-size="8" font-weight="bold">GP13</text>
+    <circle cx="12" cy="424" r="5" fill="#222" stroke="#444"/>
+    <text x="22" y="428" fill="#555" font-size="8">GND</text>
+    <circle cx="12" cy="446" r="5" fill="#FFD700" stroke="#FFD700"/>
+    <text x="22" y="450" fill="#FFD700" font-size="8" font-weight="bold">GP14</text>
+    <circle cx="12" cy="468" r="5" fill="#FF8C00" stroke="#FF8C00"/>
+    <text x="22" y="472" fill="#FFA500" font-size="8" font-weight="bold">GP15</text>
+
+    <!-- 分组框 -->
+    <rect x="2" y="110" width="52" height="124" rx="4" fill="none" stroke="#FF6666" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.7"/>
+    <text x="28" y="107" text-anchor="middle" fill="#FF6666" font-size="7">pos1</text>
+    <rect x="2" y="242" width="52" height="124" rx="4" fill="none" stroke="#6688FF" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.7"/>
+    <text x="28" y="239" text-anchor="middle" fill="#6688FF" font-size="7">pos2</text>
+    <rect x="2" y="374" width="52" height="102" rx="4" fill="none" stroke="#CD853F" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.7"/>
+    <text x="28" y="371" text-anchor="middle" fill="#CD853F" font-size="7">pos3</text>
+
+    <!-- GP16 右侧 pos3 -->
+    <rect x="57" y="462" width="51" height="16" rx="3" fill="none" stroke="#CD853F" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.7"/>
+
+    <!-- GP17-GP22 拇指区框 -->
+    <rect x="57" y="284" width="51" height="168" rx="4" fill="none" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.7"/>
+
+    <!-- Right pins -->
+    <!-- Pin21: GP16 -->
+    <circle cx="98" cy="468" r="5" fill="#8B4513" stroke="#8B4513"/>
+    <text x="88" y="472" fill="#CD853F" font-size="8" font-weight="bold" text-anchor="end">GP16</text>
+    <!-- Pin22: GP17 -->
+    <circle cx="98" cy="446" r="5" fill="#FF0000" stroke="#FF0000"/>
+    <text x="88" y="450" fill="#FF4444" font-size="8" font-weight="bold" text-anchor="end">GP17</text>
+    <!-- Pin23: GND -->
+    <circle cx="98" cy="424" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="428" fill="#555" font-size="8" text-anchor="end">GND</text>
+    <!-- Pin24: GP18 -->
+    <circle cx="98" cy="402" r="5" fill="#00CC00" stroke="#00CC00"/>
+    <text x="88" y="406" fill="#00CC00" font-size="8" font-weight="bold" text-anchor="end">GP18</text>
+    <!-- Pin25: GP19 -->
+    <circle cx="98" cy="380" r="5" fill="#0088FF" stroke="#0088FF"/>
+    <text x="88" y="384" fill="#0088FF" font-size="8" font-weight="bold" text-anchor="end">GP19</text>
+    <!-- Pin26: GP20 -->
+    <circle cx="98" cy="358" r="5" fill="#FFD700" stroke="#FFD700"/>
+    <text x="88" y="362" fill="#FFD700" font-size="8" font-weight="bold" text-anchor="end">GP20</text>
+    <!-- Pin27: GP21 -->
+    <circle cx="98" cy="336" r="5" fill="#FF8C00" stroke="#FF8C00"/>
+    <text x="88" y="340" fill="#FFA500" font-size="8" font-weight="bold" text-anchor="end">GP21</text>
+    <!-- Pin28: GND -->
+    <circle cx="98" cy="314" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="318" fill="#555" font-size="8" text-anchor="end">GND</text>
+    <!-- Pin29: GP22 -->
+    <circle cx="98" cy="292" r="5" fill="#8B4513" stroke="#8B4513"/>
+    <text x="88" y="296" fill="#CD853F" font-size="8" font-weight="bold" text-anchor="end">GP22</text>
+    <circle cx="98" cy="270" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="274" fill="#555" font-size="8" text-anchor="end">RUN</text>
+    <circle cx="98" cy="248" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="252" fill="#555" font-size="8" text-anchor="end">GP26</text>
+    <circle cx="98" cy="226" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="230" fill="#555" font-size="8" text-anchor="end">GP27</text>
+    <circle cx="98" cy="204" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="208" fill="#555" font-size="8" text-anchor="end">GND</text>
+    <circle cx="98" cy="182" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="186" fill="#555" font-size="8" text-anchor="end">GP28</text>
+    <circle cx="98" cy="160" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="164" fill="#555" font-size="8" text-anchor="end">VREF</text>
+    <circle cx="98" cy="138" r="5" fill="#e74c3c" stroke="#e74c3c"/>
+    <text x="88" y="142" fill="#e74c3c" font-size="8" text-anchor="end">3V3</text>
+    <circle cx="98" cy="116" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="120" fill="#555" font-size="8" text-anchor="end">GND</text>
+    <circle cx="98" cy="94" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="98" fill="#555" font-size="8" text-anchor="end">GND</text>
+    <circle cx="98" cy="72" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="76" fill="#555" font-size="8" text-anchor="end">VSYS</text>
+    <circle cx="98" cy="50" r="5" fill="#222" stroke="#444"/>
+    <text x="88" y="54" fill="#555" font-size="8" text-anchor="end">VBUS</text>
+  </g>
+
+  <!-- LABELS (镜像: 外侧在左, 内侧在右) -->
+  <text x="200" y="40" text-anchor="middle" fill="#4ecca3" font-size="12">← 外侧 (漆包线连内侧)</text>
+  <text x="530" y="40" text-anchor="middle" fill="#e94560" font-size="12">内侧 (彩色线到Pico) →</text>
+
+  <!-- ROW WIRES (镜像: 内侧在右, 外侧在左) -->
+  <!-- GP0 内侧蛇形 -->
+  <path d="M 460,480 L 460,75 L 520,75 L 520,480 L 580,480 L 580,75"
+        fill="none" stroke="#e94560" stroke-width="2.5" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="460" cy="480" r="4" fill="#e94560" opacity="0.8"/>
+  <text x="580" y="68" fill="#e94560" font-size="9" font-weight="bold" text-anchor="middle">GP0→Pico</text>
+
+  <!-- GP1 外侧蛇形 (pos5,6只到行1) -->
+  <path d="M 220,480 L 220,155 L 280,155 L 280,480 L 340,480 L 340,75"
+        fill="none" stroke="#4ecca3" stroke-width="2.5" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="220" cy="480" r="4" fill="#4ecca3" opacity="0.8"/>
+  <text x="340" y="68" fill="#4ecca3" font-size="9" font-weight="bold" text-anchor="middle">GP1→Pico</text>
+
+  <!-- 内外分隔 -->
+  <line x1="400" y1="55" x2="400" y2="490" stroke="#555" stroke-width="1" stroke-dasharray="8,4"/>
+
+  <!-- ===== 行0: 红·绿·蓝 (RGB) ===== -->
+  <text x="180" y="110" fill="#888" font-size="9">行0</text>
+
+  <!-- 外侧 (左边) -->
+  <rect x="196" y="81" width="48" height="48" rx="5" fill="none" stroke="#333" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="220" y="110" text-anchor="middle" fill="#444" font-size="7">空</text>
+  <rect x="256" y="81" width="48" height="48" rx="5" fill="none" stroke="#333" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="280" y="110" text-anchor="middle" fill="#444" font-size="7">空</text>
+
+  <use href="#sw" x="340" y="105"/>
+  <rect x="316" y="81" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="340" y="99" text-anchor="middle" fill="#888" font-size="8">GP2</text>
+  <text x="340" y="115" text-anchor="middle" fill="#666" font-size="7">[0,0]</text>
+
+  <!-- 内侧 (右边, 彩色) -->
+  <use href="#sw" x="460" y="105"/>
+  <rect x="436" y="81" width="48" height="48" rx="5" fill="none" stroke="#0088FF" stroke-width="2.5"/>
+  <text x="460" y="99" text-anchor="middle" fill="#0088FF" font-size="8" font-weight="bold">GP12</text>
+  <text x="460" y="115" text-anchor="middle" fill="#888" font-size="7">[1,2]</text>
+
+  <use href="#sw" x="520" y="105"/>
+  <rect x="496" y="81" width="48" height="48" rx="5" fill="none" stroke="#00CC00" stroke-width="2.5"/>
+  <text x="520" y="99" text-anchor="middle" fill="#00CC00" font-size="8" font-weight="bold">GP7</text>
+  <text x="520" y="115" text-anchor="middle" fill="#888" font-size="7">[1,1]</text>
+
+  <use href="#sw" x="580" y="105"/>
+  <rect x="556" y="81" width="48" height="48" rx="5" fill="none" stroke="#FF0000" stroke-width="2.5"/>
+  <text x="580" y="99" text-anchor="middle" fill="#FF4444" font-size="8" font-weight="bold">GP2</text>
+  <text x="580" y="115" text-anchor="middle" fill="#888" font-size="7">[1,0]</text>
+
+  <!-- ===== 行1 紫 ===== -->
+  <text x="180" y="190" fill="#888" font-size="9">行1</text>
+
+  <use href="#sw" x="220" y="185"/>
+  <rect x="196" y="161" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="220" y="179" text-anchor="middle" fill="#888" font-size="8">GP13</text>
+  <text x="220" y="195" text-anchor="middle" fill="#666" font-size="7">[0,5]</text>
+
+  <use href="#sw" x="280" y="185"/>
+  <rect x="256" y="161" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="280" y="179" text-anchor="middle" fill="#888" font-size="8">GP8</text>
+  <text x="280" y="195" text-anchor="middle" fill="#666" font-size="7">[0,4]</text>
+
+  <use href="#sw" x="340" y="185"/>
+  <rect x="316" y="161" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="340" y="179" text-anchor="middle" fill="#888" font-size="8">GP3</text>
+  <text x="340" y="195" text-anchor="middle" fill="#666" font-size="7">[0,3]</text>
+
+  <use href="#sw" x="460" y="185"/>
+  <rect x="436" y="161" width="48" height="48" rx="5" fill="none" stroke="#9933FF" stroke-width="2.5"/>
+  <text x="460" y="179" text-anchor="middle" fill="#AA55FF" font-size="8" font-weight="bold">GP13</text>
+  <text x="460" y="195" text-anchor="middle" fill="#888" font-size="7">[1,5]</text>
+
+  <use href="#sw" x="520" y="185"/>
+  <rect x="496" y="161" width="48" height="48" rx="5" fill="none" stroke="#9933FF" stroke-width="2.5"/>
+  <text x="520" y="179" text-anchor="middle" fill="#AA55FF" font-size="8" font-weight="bold">GP8</text>
+  <text x="520" y="195" text-anchor="middle" fill="#888" font-size="7">[1,4]</text>
+
+  <use href="#sw" x="580" y="185"/>
+  <rect x="556" y="161" width="48" height="48" rx="5" fill="none" stroke="#9933FF" stroke-width="2.5"/>
+  <text x="580" y="179" text-anchor="middle" fill="#AA55FF" font-size="8" font-weight="bold">GP3</text>
+  <text x="580" y="195" text-anchor="middle" fill="#888" font-size="7">[1,3]</text>
+
+  <!-- ===== 行2 黄 ===== -->
+  <text x="180" y="270" fill="#888" font-size="9">行2</text>
+
+  <use href="#sw" x="220" y="265"/>
+  <rect x="196" y="241" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="220" y="259" text-anchor="middle" fill="#888" font-size="8">GP14</text>
+  <text x="220" y="275" text-anchor="middle" fill="#666" font-size="7">[0,8]</text>
+
+  <use href="#sw" x="280" y="265"/>
+  <rect x="256" y="241" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="280" y="259" text-anchor="middle" fill="#888" font-size="8">GP9</text>
+  <text x="280" y="275" text-anchor="middle" fill="#666" font-size="7">[0,7]</text>
+
+  <use href="#sw" x="340" y="265"/>
+  <rect x="316" y="241" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="340" y="259" text-anchor="middle" fill="#888" font-size="8">GP4</text>
+  <text x="340" y="275" text-anchor="middle" fill="#666" font-size="7">[0,6]</text>
+
+  <use href="#sw" x="460" y="265"/>
+  <rect x="436" y="241" width="48" height="48" rx="5" fill="none" stroke="#FFD700" stroke-width="2.5"/>
+  <text x="460" y="259" text-anchor="middle" fill="#FFD700" font-size="8" font-weight="bold">GP14</text>
+  <text x="460" y="275" text-anchor="middle" fill="#888" font-size="7">[1,8]</text>
+
+  <use href="#sw" x="520" y="265"/>
+  <rect x="496" y="241" width="48" height="48" rx="5" fill="none" stroke="#FFD700" stroke-width="2.5"/>
+  <text x="520" y="259" text-anchor="middle" fill="#FFD700" font-size="8" font-weight="bold">GP9</text>
+  <text x="520" y="275" text-anchor="middle" fill="#888" font-size="7">[1,7]</text>
+
+  <use href="#sw" x="580" y="265"/>
+  <rect x="556" y="241" width="48" height="48" rx="5" fill="none" stroke="#FFD700" stroke-width="2.5"/>
+  <text x="580" y="259" text-anchor="middle" fill="#FFD700" font-size="8" font-weight="bold">GP4</text>
+  <text x="580" y="275" text-anchor="middle" fill="#888" font-size="7">[1,6]</text>
+
+  <!-- ===== 行3 橙 ===== -->
+  <text x="180" y="350" fill="#888" font-size="9">行3</text>
+
+  <use href="#sw" x="220" y="345"/>
+  <rect x="196" y="321" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="220" y="339" text-anchor="middle" fill="#888" font-size="8">GP15</text>
+  <text x="220" y="355" text-anchor="middle" fill="#666" font-size="7">[0,11]</text>
+
+  <use href="#sw" x="280" y="345"/>
+  <rect x="256" y="321" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="280" y="339" text-anchor="middle" fill="#888" font-size="8">GP10</text>
+  <text x="280" y="355" text-anchor="middle" fill="#666" font-size="7">[0,10]</text>
+
+  <use href="#sw" x="340" y="345"/>
+  <rect x="316" y="321" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="340" y="339" text-anchor="middle" fill="#888" font-size="8">GP5</text>
+  <text x="340" y="355" text-anchor="middle" fill="#666" font-size="7">[0,9]</text>
+
+  <use href="#sw" x="460" y="345"/>
+  <rect x="436" y="321" width="48" height="48" rx="5" fill="none" stroke="#FF8C00" stroke-width="2.5"/>
+  <text x="460" y="339" text-anchor="middle" fill="#FFA500" font-size="8" font-weight="bold">GP15</text>
+  <text x="460" y="355" text-anchor="middle" fill="#888" font-size="7">[1,11]</text>
+
+  <use href="#sw" x="520" y="345"/>
+  <rect x="496" y="321" width="48" height="48" rx="5" fill="none" stroke="#FF8C00" stroke-width="2.5"/>
+  <text x="520" y="339" text-anchor="middle" fill="#FFA500" font-size="8" font-weight="bold">GP10</text>
+  <text x="520" y="355" text-anchor="middle" fill="#888" font-size="7">[1,10]</text>
+
+  <use href="#sw" x="580" y="345"/>
+  <rect x="556" y="321" width="48" height="48" rx="5" fill="none" stroke="#FF8C00" stroke-width="2.5"/>
+  <text x="580" y="339" text-anchor="middle" fill="#FFA500" font-size="8" font-weight="bold">GP5</text>
+  <text x="580" y="355" text-anchor="middle" fill="#888" font-size="7">[1,9]</text>
+
+  <!-- ===== 行4 褐 ===== -->
+  <text x="180" y="430" fill="#888" font-size="9">行4</text>
+
+  <use href="#sw" x="220" y="425"/>
+  <rect x="196" y="401" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="220" y="419" text-anchor="middle" fill="#888" font-size="8">GP16</text>
+  <text x="220" y="435" text-anchor="middle" fill="#666" font-size="7">[0,14]</text>
+
+  <use href="#sw" x="280" y="425"/>
+  <rect x="256" y="401" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="280" y="419" text-anchor="middle" fill="#888" font-size="8">GP11</text>
+  <text x="280" y="435" text-anchor="middle" fill="#666" font-size="7">[0,13]</text>
+
+  <use href="#sw" x="340" y="425"/>
+  <rect x="316" y="401" width="48" height="48" rx="5" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="340" y="419" text-anchor="middle" fill="#888" font-size="8">GP6</text>
+  <text x="340" y="435" text-anchor="middle" fill="#666" font-size="7">[0,12]</text>
+
+  <use href="#sw" x="460" y="425"/>
+  <rect x="436" y="401" width="48" height="48" rx="5" fill="none" stroke="#8B4513" stroke-width="2.5"/>
+  <text x="460" y="419" text-anchor="middle" fill="#CD853F" font-size="8" font-weight="bold">GP16</text>
+  <text x="460" y="435" text-anchor="middle" fill="#888" font-size="7">[1,14]</text>
+
+  <use href="#sw" x="520" y="425"/>
+  <rect x="496" y="401" width="48" height="48" rx="5" fill="none" stroke="#8B4513" stroke-width="2.5"/>
+  <text x="520" y="419" text-anchor="middle" fill="#CD853F" font-size="8" font-weight="bold">GP11</text>
+  <text x="520" y="435" text-anchor="middle" fill="#888" font-size="7">[1,13]</text>
+
+  <use href="#sw" x="580" y="425"/>
+  <rect x="556" y="401" width="48" height="48" rx="5" fill="none" stroke="#8B4513" stroke-width="2.5"/>
+  <text x="580" y="419" text-anchor="middle" fill="#CD853F" font-size="8" font-weight="bold">GP6</text>
+  <text x="580" y="435" text-anchor="middle" fill="#888" font-size="7">[1,12]</text>
+
+  <!-- 拇指区 (右下, 镜像左手的左下) -->
+  <g transform="translate(640, 560) rotate(45)">
+    <text x="0" y="-70" text-anchor="middle" fill="#f39c12" font-size="10" font-weight="bold">拇指区 (→GND)</text>
+
+    <!-- 第1行: 右→左 (镜像左手) 红→绿→蓝 -->
+    <use href="#sw" x="60" y="-30"/>
+    <rect x="36" y="-54" width="48" height="48" rx="5" fill="none" stroke="#FF0000" stroke-width="2.5"/>
+    <text x="60" y="-36" text-anchor="middle" fill="#FF4444" font-size="8" font-weight="bold">GP17</text>
+    <text x="60" y="-20" text-anchor="middle" fill="#FF4444" font-size="8">红</text>
+
+    <use href="#sw" x="0" y="-30"/>
+    <rect x="-24" y="-54" width="48" height="48" rx="5" fill="none" stroke="#00CC00" stroke-width="2.5"/>
+    <text x="0" y="-36" text-anchor="middle" fill="#00CC00" font-size="8" font-weight="bold">GP18</text>
+    <text x="0" y="-20" text-anchor="middle" fill="#00CC00" font-size="8">绿</text>
+
+    <use href="#sw" x="-60" y="-30"/>
+    <rect x="-84" y="-54" width="48" height="48" rx="5" fill="none" stroke="#0088FF" stroke-width="2.5"/>
+    <text x="-60" y="-36" text-anchor="middle" fill="#0088FF" font-size="8" font-weight="bold">GP19</text>
+    <text x="-60" y="-20" text-anchor="middle" fill="#0088FF" font-size="8">蓝</text>
+
+    <!-- 第2行: 左→右 (蛇形拐弯) 黄→橙→褐 -->
+    <use href="#sw" x="-60" y="30"/>
+    <rect x="-84" y="6" width="48" height="48" rx="5" fill="none" stroke="#FFD700" stroke-width="2.5"/>
+    <text x="-60" y="24" text-anchor="middle" fill="#FFD700" font-size="8" font-weight="bold">GP20</text>
+    <text x="-60" y="40" text-anchor="middle" fill="#FFD700" font-size="8">黄</text>
+
+    <use href="#sw" x="0" y="30"/>
+    <rect x="-24" y="6" width="48" height="48" rx="5" fill="none" stroke="#FF8C00" stroke-width="2.5"/>
+    <text x="0" y="24" text-anchor="middle" fill="#FFA500" font-size="8" font-weight="bold">GP21</text>
+    <text x="0" y="40" text-anchor="middle" fill="#FFA500" font-size="8">橙</text>
+
+    <use href="#sw" x="60" y="30"/>
+    <rect x="36" y="6" width="48" height="48" rx="5" fill="none" stroke="#8B4513" stroke-width="2.5"/>
+    <text x="60" y="24" text-anchor="middle" fill="#CD853F" font-size="8" font-weight="bold">GP22</text>
+    <text x="60" y="40" text-anchor="middle" fill="#CD853F" font-size="8">褐</text>
+  </g>
+
+</svg>
+</body>
+</html>

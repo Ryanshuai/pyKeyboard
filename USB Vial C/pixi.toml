@@ -1,0 +1,22 @@
+[project]
+name = "qmk-keyboard"
+version = "0.1.0"
+description = "QMK/Vial build environment for Elf keyboard"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[dependencies]
+python = "3.11.*"
+pip = "*"
+gcc-arm-none-eabi = "*"
+make = "*"
+git = "*"
+
+[pypi-dependencies]
+qmk = "*"
+
+[tasks]
+build-left = "cd ~/vial-qmk && make elf/elf_2x15_left_v2:vial"
+build-right = "cd ~/vial-qmk && make elf/elf_2x15_right_v2:vial"
+build-all = { depends-on = ["build-left", "build-right"] }
+clean = "cd ~/vial-qmk && make clean"
